@@ -1,0 +1,69 @@
+<app-encabezado-crear></app-encabezado-crear>
+
+<div class="caso-detalle">
+
+  @if (caso) {
+
+    <h1 class="titulo">
+      {{ caso.nombre }}
+    </h1>
+
+    <div class="caso-contenido">
+
+      <div class="caso-imagen">
+        <img
+          [src]="caso.imagen"
+          [alt]="caso.alt"
+        >
+      </div>
+
+      <div class="caso-informacion">
+
+        <div class="caso-status">
+          <span
+            class="status-dot"
+            [class]="caso.claseEstado">
+          </span>
+
+          <span class="status-label">
+            {{ caso.estado }}
+          </span>
+        </div>
+
+        <div class="dato">
+          <strong>Ubicación:</strong>
+          <span>{{ caso.ubicacion }}</span>
+        </div>
+
+        <div class="dato">
+          <strong>Fecha:</strong>
+          <span>{{ caso.fecha }}</span>
+        </div>
+
+        <div class="dato">
+          <strong>Hora:</strong>
+          <span>{{ caso.hora }}</span>
+        </div>
+
+        <div class="dato descripcion">
+          <strong>Descripción:</strong>
+          <span>{{ caso.descripcion }}</span>
+        </div>
+
+      </div>
+
+    </div>
+
+  } @else {
+
+    <h1 class="titulo">
+      Caso no encontrado
+    </h1>
+
+    <p>
+      El caso que buscas no existe o ya no está disponible.
+    </p>
+
+  }
+
+</div>

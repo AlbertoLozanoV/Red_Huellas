@@ -1,0 +1,31 @@
+# =========================
+# Angular / Frontend
+# =========================
+
+frontend/node_modules/
+frontend/.angular/
+frontend/dist/
+frontend/.cache/
+
+# =========================
+# Spring Boot / Backend
+# =========================
+
+backend/.gradle/
+backend/build/
+backend/bin/
+backend/out/
+
+# =========================
+# IDE / Sistema
+# =========================
+
+.vscode/
+.idea/
+*.iml
+
+# =========================
+# Logs
+# =========================
+
+*.log

@@ -1,0 +1,353 @@
+/* ── Reset ── */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #d0eaf7;
+  min-height: 100vh;
+}
+
+
+/* ── Page ── */
+
+.page {
+  min-height: 100vh;
+  background-color: #d0eaf7;
+}
+
+
+/* ── Subtitle ── */
+
+.subtitle {
+  padding: 20px 32px 12px;
+  font-size: 0.9rem;
+  color: #222222;
+}
+
+
+/* ── Main ── */
+
+.main {
+  padding: 0 32px 20px;
+}
+
+
+/* ── Form ── */
+
+.form {
+  width: 100%;
+}
+
+
+/* ── Grid de los paneles ── */
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 26px 74px;
+
+  background-color: #ffffff;
+
+  border: 2px solid #1a1a1a;
+  border-radius: 12px;
+
+  padding: 18px 30px 20px;
+}
+
+
+/* ── Paneles ── */
+
+.panel {
+  border: 2px solid #1a1a1a;
+  border-radius: 12px;
+
+  padding: 4px 20px 12px;
+
+  background-color: transparent;
+
+  min-width: 0;
+}
+
+.panel legend {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #111111;
+
+  padding: 0 8px;
+}
+
+
+/* ── Contenido de cada panel ── */
+
+.panel__fields {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  margin-top: 5px;
+}
+
+
+/* ── Filas ── */
+
+.form-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.form-row label {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #222222;
+
+  width: 120px;
+  flex-shrink: 0;
+}
+
+
+/* ── Campos verticales ── */
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.form-field label {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #222222;
+}
+
+
+/* ── Controles ── */
+
+.input,
+.select,
+.textarea {
+  width: 100%;
+
+  border: 1px solid #999999;
+  border-radius: 3px;
+
+  background-color: #ffffff;
+
+  font-size: 0.85rem;
+  color: #111111;
+
+  padding: 5px 8px;
+
+  outline: none;
+
+  font-family: inherit;
+
+  transition:
+    border-color 0.15s,
+    box-shadow 0.15s;
+}
+
+.input:focus,
+.select:focus,
+.textarea:focus {
+  border-color: #4a90d9;
+
+  box-shadow:
+    0 0 0 2px rgba(74, 144, 217, 0.25);
+}
+
+.select {
+  cursor: pointer;
+}
+
+.textarea {
+  resize: none;
+}
+
+
+/* ── Campo de foto ── */
+
+.file-control {
+  display: flex;
+  align-items: center;
+
+  flex: 1;
+  min-width: 0;
+}
+
+.file-control .input {
+  border-radius: 3px 0 0 3px;
+}
+
+
+/* Botón Agregar */
+
+.btn-file {
+  height: 28px;
+
+  min-width: 118px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: #72c9f2;
+
+  border: 1px solid #4a90d9;
+  border-radius: 0 5px 5px 0;
+
+  color: #111111;
+
+  font-size: 0.85rem;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: background-color 0.15s;
+}
+
+.btn-file:hover {
+  background-color: #55b8e8;
+}
+
+
+/* ── Botones de acción ── */
+
+.actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 74px;
+
+  margin-top: 16px;
+}
+
+
+/* Cancelar */
+
+.btn-cancel {
+  background-color: #ff4545;
+
+  color: #ffffff;
+
+  font-size: 1.1rem;
+  font-weight: 900;
+
+  text-transform: uppercase;
+
+  padding: 8px 22px;
+
+  border: 2px solid #e52e2e;
+  border-radius: 9px;
+
+  cursor: pointer;
+
+  transition: background-color 0.15s;
+}
+
+.btn-cancel:hover {
+  background-color: #d93636;
+}
+
+
+/* Enviar */
+
+.btn-report {
+  background-color: #00bd63;
+
+  color: #ffffff;
+
+  font-size: 1.1rem;
+  font-weight: 900;
+
+  text-transform: uppercase;
+
+  padding: 8px 35px;
+
+  border: 2px solid #009e52;
+  border-radius: 9px;
+
+  cursor: pointer;
+
+  transition: background-color 0.15s;
+}
+
+.btn-report:hover {
+  background-color: #00a957;
+}
+
+
+/* ── Responsive ── */
+
+@media (max-width: 850px) {
+
+  .form-grid {
+    grid-template-columns: 1fr;
+
+    gap: 20px;
+  }
+
+  .actions {
+    gap: 20px;
+  }
+}
+
+
+@media (max-width: 640px) {
+
+  .main {
+    padding: 0 16px 20px;
+  }
+
+  .subtitle {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .form-grid {
+    padding: 15px;
+  }
+
+  .form-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .form-row label {
+    width: auto;
+  }
+
+  .file-control {
+    width: 100%;
+  }
+
+  .actions {
+    flex-direction: column;
+  }
+
+  .btn-cancel,
+  .btn-report {
+    width: 100%;
+  }
+}
+.map {
+  width: 100%;
+  height: 400px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.ubicacion-ayuda {
+  margin: 0 0 10px 0;
+  color: #555;
+  font-size: 14px;
+}

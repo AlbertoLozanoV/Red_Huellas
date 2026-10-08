@@ -1,0 +1,66 @@
+<section class="section-cerca">
+  <h2 class="section-title">¿Que esta pasando cerca de ti?</h2>
+
+  <div class="pets-grid">
+
+    @if (mostrarCoffe) {
+      <div class="pet-item">
+        <div class="pet-photo">
+          <img
+            src="https://images.dog.ceo/breeds/retriever-golden/n02099601_3004.jpg"
+            alt="Coffe"
+          />
+        </div>
+
+        <p class="pet-name">Coffe</p>
+
+        <a
+          [routerLink]="['/formulario-adopcion', 'Coffe']"
+          class="btn-adoptame">
+          Adóptame
+        </a>
+      </div>
+    }
+
+
+    @if (mostrarDug) {
+      <div class="pet-item">
+        <div class="pet-photo">
+          <img
+            src="https://cdn0.uncomo.com/es/posts/3/4/4/basset_hound_55443_0_600.jpg"
+            alt="Dug"
+          />
+        </div>
+
+        <p class="pet-name">Dug</p>
+
+        <a
+          [routerLink]="['/formulario-adopcion', 'Dug']"
+          class="btn-adoptame">
+          Adóptame
+        </a>
+      </div>
+    }
+
+
+    @if (mostrarLuna) {
+      <div class="pet-item">
+        <div class="pet-photo">
+          <img
+            src="https://images.dog.ceo/breeds/beagle/n02088364_11136.jpg"
+            alt="Luna"
+          />
+        </div>
+
+        <p class="pet-name">Luna</p>
+
+        <a
+          [routerLink]="['/formulario-adopcion', 'Luna']"
+          class="btn-adoptame">
+          Adóptame
+        </a>
+      </div>
+    }
+
+  </div>
+</section>

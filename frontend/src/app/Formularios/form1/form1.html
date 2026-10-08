@@ -1,0 +1,86 @@
+    <p class="subtitle">
+      Llena el siguiente formulario para ponerte en contacto con el albergue más cercano
+    </p>
+     
+    <main class="main">
+
+      <div class="content">
+
+
+        <div class="illustration">
+          <img
+            src="https://images.unsplash.com/photo-1565194801011-a79465c75fca?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&w=400&h=400&auto=format"
+            alt="Animales en un albergue"
+          />
+        </div>
+
+        <!-- Form -->
+        <form class="form" id="contactForm">
+
+          <!-- Datos de contacto -->
+          <fieldset class="panel">
+            <legend>Datos de contacto</legend>
+            <div class="panel__fields">
+
+              <div class="form-row">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" class="input" />
+              </div>
+
+              <div class="form-row">
+                <label for="correo">Correo:</label>
+                <input type="email" id="correo" name="correo" class="input" />
+              </div>
+
+              <div class="form-row">
+                <label for="telefono">Teléfono:</label>
+                <input type="tel" id="telefono" name="telefono" class="input" />
+              </div>
+
+              <div class="form-row">
+                <label for="ubicacion">Ubicación:</label>
+                <input type="text" id="ubicacion" name="ubicacion" class="input" />
+              </div>
+
+            </div>
+          </fieldset>
+
+          <!-- Información adicional -->
+          <fieldset class="panel">
+            <legend>Información adicional</legend>
+            <div class="panel__fields">
+
+              <div class="form-field">
+                <label for="motivo">Motivo del contacto:</label>
+                <select id="motivo" name="motivo" class="select">
+                  <option value=""></option>
+                  <option value="adopcion">Adopción</option>
+                  <option value="donacion">Donación</option>
+                  <option value="voluntariado">Voluntariado</option>
+                  <option value="reporte">Reporte de animal</option>
+                  <option value="consulta">Consulta general</option>
+                  <option value="otro">Otro</option>
+                </select>
+              </div>
+
+              <div class="form-field">
+                <label for="mensaje">Mensaje:</label>
+                <textarea id="mensaje" name="mensaje" class="textarea" rows="4"></textarea>
+              </div>
+
+            </div>
+          </fieldset>
+
+        </form>
+      </div>
+
+      <!-- Action buttons -->
+      <div class="actions">
+        <button type="button" class="btn-cancel" onclick="document.getElementById('contactForm').reset()">
+          Borrar
+        </button>
+        <button type="submit" class="btn-contact" form="contactForm">
+          Contactar
+        </button>
+      </div>
+    </main>

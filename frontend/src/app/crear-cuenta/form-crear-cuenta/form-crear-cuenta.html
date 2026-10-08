@@ -1,0 +1,104 @@
+<main class="main-container">
+  <div class="card-container">
+
+    <h2 class="form-title">Crear Cuenta</h2>
+
+    <p class="form-subtitle">
+      Regístrate para comenzar
+    </p>
+
+    <form class="register-form">
+
+      <div class="form-group">
+        <label for="name">Nombre</label>
+
+        <input
+          #nameInput
+          type="text"
+          id="name"
+          placeholder="Tu nombre"
+          required
+        >
+      </div>
+
+      <div class="form-group">
+        <label for="lastname">Apellido</label>
+
+        <input
+          #lastnameInput
+          type="text"
+          id="lastname"
+          placeholder="Tu apellido"
+          required
+        >
+      </div>
+
+      <div class="form-group">
+        <label for="email">Correo electrónico</label>
+
+        <input
+          #emailInput
+          type="email"
+          id="email"
+          placeholder="ejemplo@correo.com"
+          required
+        >
+      </div>
+
+      <div class="form-group">
+        <label for="password">Contraseña</label>
+
+        <input
+          #passInput
+          type="password"
+          id="password"
+          placeholder="••••••••"
+          required
+        >
+      </div>
+
+      <div class="form-group">
+        <label for="confirmPassword">
+          Confirmar contraseña
+        </label>
+
+        <input
+          #confirmPassInput
+          type="password"
+          id="confirmPassword"
+          placeholder="••••••••"
+          required
+        >
+      </div>
+
+      <div class="form-actions">
+        <a routerLink="/formulario-login" class="login-link">
+          ¿Ya tienes cuenta? Iniciar sesión
+        </a>
+      </div>
+
+      <button
+        type="button"
+        (click)="onSubmit(
+          $event,
+          nameInput.value,
+          lastnameInput.value,
+          emailInput.value,
+          passInput.value,
+          confirmPassInput.value
+        )"
+        class="btn-black"
+        [disabled]="cargando"
+      >
+        {{ cargando ? 'CARGANDO...' : 'CREAR CUENTA' }}
+      </button>
+
+    </form>
+  </div>
+</main>
+
+@if (cargando) {
+  <div class="loading-overlay">
+    <div class="spinner"></div>
+  </div>
+}

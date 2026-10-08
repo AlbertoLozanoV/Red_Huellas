@@ -1,0 +1,72 @@
+<section class="section-cerca">
+  <h2 class="section-title">Casos recientes</h2>
+
+  <div class="casos-grid">
+
+    <a
+      [routerLink]="['/caso', 1]"
+      class="caso-card">
+
+      <div class="caso-photo">
+        <img
+          src="https://content.elmueble.com/medio/2023/04/11/bull-terrier_c73372f7_230411112534_900x900.jpg"
+          alt="Bull Terrier"
+        />
+      </div>
+
+      <div class="caso-status">
+        <span class="status-dot amarillo"></span>
+        <span class="status-label">En búsqueda</span>
+      </div>
+
+      <p class="caso-info">Caso 1</p>
+      <p class="caso-info">Visto en Ojo de agua</p>
+
+    </a>
+
+
+    <a
+      [routerLink]="['/caso', 2]"
+      class="caso-card">
+
+      <div class="caso-photo">
+        <img
+          src="https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cb/Gatosiames.jpg/330px-Gatosiames.jpg?utm_source=es.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
+          alt="Gato siamés"
+        />
+      </div>
+
+      <div class="caso-status">
+        <span class="status-dot rojo"></span>
+        <span class="status-label">Perdido</span>
+      </div>
+
+      <p class="caso-info">Caso 2</p>
+      <p class="caso-info">Visto última vez en Tecámac</p>
+
+    </a>
+
+
+    <a
+      [routerLink]="['/caso', 3]"
+      class="caso-card">
+
+      <div class="caso-photo">
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyvRCiZWQkxkXXTnGV1o6iQJcS4gkfJdXLqrzZTXi5T6yc-XluyPukNKdi&s=10"
+          alt="Husky"
+        />
+      </div>
+
+      <div class="caso-status">
+        <span class="status-dot verde"></span>
+        <span class="status-label">Encontrado</span>
+      </div>
+
+      <p class="caso-info">Caso 3</p>
+      <p class="caso-info">Encontrado en Ecatepec</p>
+
+    </a>
+
+  </div>
+</section>

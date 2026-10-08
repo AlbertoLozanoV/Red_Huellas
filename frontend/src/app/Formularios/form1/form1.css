@@ -1,0 +1,269 @@
+/* ── Reset ── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #d0eaf7;
+  min-height: 100vh;
+}
+
+/* ── Page wrapper ── */
+.page {
+  min-height: 100vh;
+  background-color: #d0eaf7;
+}
+
+/* ── Header ── */
+.header {
+  background-color: #ffffff;
+  border-bottom: 1px solid #c8c8c8;
+  padding: 10px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header__brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.header__logo {
+  width: 40px;
+  height: 40px;
+  background-color: #1a1a1a;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header__title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #111111;
+}
+
+.header__nav {
+  display: flex;
+  gap: 8px;
+}
+
+.btn-nav {
+  background-color: #1a1a1a;
+  color: #ffffff;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 8px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.15s;
+}
+
+.btn-nav:hover {
+  background-color: #444444;
+}
+
+/* ── Subtitle ── */
+.subtitle {
+  padding: 20px 32px 12px;
+  font-size: 0.9rem;
+  color: #222222;
+}
+
+/* ── Main layout ── */
+.main {
+  padding: 0 32px 40px;
+}
+
+.content {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+/* ── Illustration ── */
+.illustration {
+  flex-shrink: 0;
+  width: 220px;
+  height: 220px;
+  background-color: #f5c842;
+  border: 2px solid #1a1a1a;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.illustration img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ── Form ── */
+.form {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-width: 0;
+}
+
+/* ── Fieldset panels ── */
+.panel {
+  border: 2px solid #1a1a1a;
+  border-radius: 12px;
+  padding: 4px 20px 20px;
+  background: transparent;
+}
+
+.panel legend {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #111111;
+  padding: 0 8px;
+}
+
+.panel__fields {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 6px;
+}
+
+/* ── Form rows (label + input en línea) ── */
+.form-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.form-row label {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #222222;
+  width: 90px;
+  flex-shrink: 0;
+}
+
+/* ── Form fields (label arriba del control) ── */
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.form-field label {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #222222;
+}
+
+/* ── Controles ── */
+.input,
+.select,
+.textarea {
+  width: 100%;
+  border: 1px solid #999999;
+  border-radius: 3px;
+  background-color: #ffffff;
+  font-size: 0.85rem;
+  color: #111111;
+  padding: 5px 8px;
+  outline: none;
+  font-family: inherit;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.input:focus,
+.select:focus,
+.textarea:focus {
+  border-color: #4a90d9;
+  box-shadow: 0 0 0 2px rgba(74, 144, 217, 0.25);
+}
+
+.select {
+  cursor: pointer;
+}
+
+.textarea {
+  resize: none;
+}
+
+/* ── Botones de acción ── */
+.actions {
+  display: flex;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.btn-cancel {
+  background-color: #e8453c;
+  color: #ffffff;
+  font-size: 1.1rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 12px 36px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.15s;
+}
+
+.btn-cancel:hover {
+  background-color: #c0392b;
+}
+
+.btn-contact {
+  background-color: #2ecc71;
+  color: #ffffff;
+  font-size: 1.1rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 12px 36px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.15s;
+}
+
+.btn-contact:hover {
+  background-color: #27ae60;
+}
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  .content {
+    flex-direction: column;
+  }
+
+  .illustration {
+    width: 100%;
+    height: 200px;
+  }
+
+  .form-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .form-row label {
+    width: auto;
+  }
+
+  .actions {
+    flex-direction: column;
+  }
+}

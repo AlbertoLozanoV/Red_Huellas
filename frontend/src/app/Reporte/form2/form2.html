@@ -1,0 +1,368 @@
+<p class="subtitle">
+  Si has visto un animal en situación de calle repórtalo mediante el siguiente formulario:
+</p>
+
+<main class="main">
+
+  <form
+    class="form"
+    id="reporteForm"
+    (ngSubmit)="enviarReporte()"
+  >
+
+    <div class="form-grid">
+
+      <!-- DATOS DEL ANIMAL -->
+
+      <fieldset class="panel">
+
+        <legend>Datos del animal</legend>
+
+        <div class="panel__fields">
+
+          <div class="form-row">
+
+            <label for="animal">
+              ¿Qué animal es?
+            </label>
+
+            <select
+              id="animal"
+              name="animal"
+              class="select"
+              [(ngModel)]="animal.tipo"
+            >
+
+              <option value=""></option>
+              <option value="perro">Perro</option>
+              <option value="gato">Gato</option>
+              <option value="ave">Ave</option>
+              <option value="otro">Otro</option>
+
+            </select>
+
+          </div>
+
+
+          <div class="form-field">
+
+            <label for="descripcion">
+              Descripción:
+            </label>
+
+            <textarea
+              id="descripcion"
+              name="descripcion"
+              class="textarea"
+              rows="3"
+              [(ngModel)]="animal.descripcion"
+            ></textarea>
+
+          </div>
+
+
+          <div class="form-row">
+
+            <label for="condicion">
+              Condición:
+            </label>
+
+            <select
+              id="condicion"
+              name="condicion"
+              class="select"
+               [(ngModel)]="animal.condicion"
+            >
+
+              <option value=""></option>
+              <option value="buena">Buena</option>
+              <option value="regular">Regular</option>
+              <option value="mala">Mala</option>
+              <option value="grave">Grave</option>
+
+            </select>
+
+          </div>
+
+        </div>
+
+      </fieldset>
+
+
+      <!-- EVIDENCIA -->
+
+      <fieldset class="panel">
+
+        <legend>Evidencia</legend>
+
+        <div class="panel__fields">
+
+          <div class="form-row">
+
+            <label for="fecha">
+              Fecha del avistamiento:
+            </label>
+
+            <input
+              type="date"
+              id="fecha"
+              name="fecha"
+              class="input"
+              [(ngModel)]="animal.fecha"
+            />
+
+          </div>
+
+
+          <div class="form-row">
+
+            <label for="hora">
+              Hora del avistamiento:
+            </label>
+
+            <input
+              type="time"
+              id="hora"
+              name="hora"
+              class="input"
+              [(ngModel)]="animal.hora"
+            />
+
+          </div>
+
+
+          <div class="form-row">
+
+            <label for="foto">
+              Foto:
+            </label>
+
+            <div class="file-control">
+
+              <input
+                type="text"
+                id="nombreFoto"
+                class="input"
+                readonly
+              />
+
+              <label
+                for="foto"
+                class="btn-file"
+              >
+                Agregar
+              </label>
+
+              <input
+                type="file"
+                id="foto"
+                name="foto"
+                accept="image/*"
+                hidden
+              />
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </fieldset>
+
+
+<fieldset class="panel">
+  <legend>Ubicación</legend>
+
+  <div class="panel__fields">
+
+    <p class="ubicacion-ayuda">
+      Selecciona en el mapa el lugar donde viste al animal.
+      Puedes hacer clic en el mapa o mover el marcador.
+    </p>
+
+
+    <div
+      id="map"
+      class="map"
+    ></div>
+
+    <!-- ESTADO -->
+    <div class="form-row">
+      <label for="estado">
+        Estado:
+      </label>
+
+      <input
+        type="text"
+        id="estado"
+        name="estado"
+        class="input"
+        [(ngModel)]="ubicacion.estado"
+        readonly
+      />
+    </div>
+
+    <!-- MUNICIPIO -->
+    <div class="form-row">
+      <label for="municipio">
+        Municipio:
+      </label>
+
+      <input
+        type="text"
+        id="municipio"
+        name="municipio"
+        class="input"
+        [(ngModel)]="ubicacion.municipio"
+        readonly
+      />
+    </div>
+
+    <!-- COLONIA -->
+    <div class="form-row">
+      <label for="colonia">
+        Colonia:
+      </label>
+
+      <input
+        type="text"
+        id="colonia"
+        name="colonia"
+        class="input"
+        [(ngModel)]="ubicacion.colonia"
+        readonly
+      />
+    </div>
+
+    <!-- CALLE -->
+    <div class="form-row">
+      <label for="calle">
+        Calle:
+      </label>
+
+      <input
+        type="text"
+        id="calle"
+        name="calle"
+        class="input"
+        [(ngModel)]="ubicacion.calle"
+        readonly
+      />
+    </div>
+
+    <!-- REFERENCIA -->
+    <div class="form-row">
+      <label for="referencia">
+        Referencia:
+      </label>
+
+      <input
+        type="text"
+        id="referencia"
+        name="referencia"
+        class="input"
+        [(ngModel)]="ubicacion.referencia"
+      />
+    </div>
+
+  </div>
+</fieldset>
+
+<fieldset class="panel">
+
+  <legend>Datos del reportante</legend>
+
+  <div class="panel__fields">
+
+    <div class="form-row">
+      <label for="nombre">
+        Nombre:
+      </label>
+
+      <input
+        type="text"
+        id="nombre"
+        name="nombre"
+        class="input"
+        [(ngModel)]="reportante.nombre"
+        readonly
+      />
+    </div>
+
+    <div class="form-row">
+      <label for="apellido">
+        Apellido:
+      </label>
+
+      <input
+        type="text"
+        id="apellido"
+        name="apellido"
+        class="input"
+        [(ngModel)]="reportante.apellido"
+        readonly
+      />
+    </div>
+
+    <div class="form-row">
+      <label for="correo">
+        Correo:
+      </label>
+
+      <input
+        type="email"
+        id="correo"
+        name="correo"
+        class="input"
+        [(ngModel)]="reportante.correo"
+        readonly
+      />
+    </div>
+
+    <div class="form-row">
+      <label for="telefono">
+        Teléfono:
+      </label>
+
+      <input
+        type="tel"
+        id="telefono"
+        name="telefono"
+        class="input"
+        [(ngModel)]="reportante.telefono"
+        placeholder="Ingresa tu teléfono"
+        required
+      />
+    </div>
+
+  </div>
+
+</fieldset>
+
+    </div>
+
+
+    <!-- BOTONES -->
+
+    <div class="actions">
+
+      <button
+        type="button"
+        class="btn-cancel"
+        (click)="borrarFormulario()"
+      >
+        Borrar
+      </button>
+
+      <button
+        type="submit"
+        class="btn-report"
+      >
+        Enviar
+      </button>
+
+    </div>
+
+  </form>
+
+</main>

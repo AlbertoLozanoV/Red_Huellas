@@ -1,0 +1,62 @@
+.section-cerca {
+  background-color: #c8e6f5;
+  border: 2px solid #999;
+  border-radius: 18px;
+  padding: 22px 28px 28px;
+  margin: 5px;
+}
+.section-aprende {
+  text-align: center;
+}
+
+.aprende-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #111;
+}
+
+.aprende-subtitle {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 28px;
+  color: #111;
+}
+
+.aprende-grid {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.aprende-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  width: 220px;
+}
+
+.aprende-box {
+  width: 200px;
+  height: 200px;
+  background-color: #fff;
+  border: 3px solid #111;
+  border-radius: 28px;
+}
+
+.aprende-label {
+  font-size: 0.97rem;
+  color: #111;
+  text-align: center;
+  line-height: 1.4;
+  max-width: 180px;
+}
+.aprende-grid {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 20px;
+}

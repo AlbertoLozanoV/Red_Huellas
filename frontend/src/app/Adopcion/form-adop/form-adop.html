@@ -1,0 +1,103 @@
+<div class="page-wrapper">
+    <p class="subtitle">Llena el siguiente formulario con tus datos correspondientes para poder adoptar a:</p>
+
+    <main class="content-grid">
+        <form class="form-container">
+            <fieldset class="form-section">
+                <legend class="section-title">Datos personales</legend>
+                <div class="input-row">
+                    <div class="field-group flex-3">
+                        <label for="nombre">Nombre:</label>
+                      
+                        <input #txtNombre type="text" id="nombre">
+                    </div>
+                    <div class="field-group flex-1">
+                        <label for="edad">Edad:</label>
+                      
+                        <input #txtEdad type="text" id="edad">
+                    </div>
+                </div>
+                <div class="input-row">
+                    <div class="field-group flex-3">
+                        <label for="correo">Correo:</label>
+                  
+                        <input #txtCorreo type="email" id="correo">
+                    </div>
+                    <div class="field-group flex-2">
+                        <label for="telefono">Teléfono:</label>
+                        
+                        <input #txtTelefono type="tel" id="telefono">
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset class="form-section">
+                <legend class="section-title">Información del hogar</legend>
+                <div class="input-row">
+                    <div class="field-group flex-1">
+                        <label for="direccion">Dirección:</label>
+                      
+                        <input #txtDireccion type="text" id="direccion">
+                    </div>
+                </div>
+                <div class="input-row align-center">
+                    <span class="inline-label">¿Hay otros animales en casa?</span>
+                    <div class="radio-options">
+                       
+                        <label><input type="radio" name="otros_animales" #animalesNo value="no" checked> No</label>
+                        <label><input type="radio" name="otros_animales" #animalesSi value="si"> Si</label>
+                    </div>
+                    <div class="field-group inline-field flex-1">
+                        <label for="cual_animal">¿Cuál?:</label>
+                       
+                        <input #txtTipoAnimales type="text" id="cual_animal">
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset class="form-section">
+                <legend class="section-title">Compromiso</legend>
+                <div class="input-row">
+                    <div class="field-group flex-1">
+                        <label for="motivo">Motivo por el que deseas adoptar:</label>
+                       
+                        <input #txtMotivo type="text" id="motivo">
+                    </div>
+                </div>
+                <div class="input-row align-center">
+                    <span class="inline-label">¿Tienes completa capacidad para cubrir los gastos?</span>
+                    <div class="radio-options">
+                        
+                        <label><input type="radio" name="cubrir_gastos" #gastosNo value="no" checked> No</label>
+                        <label><input type="radio" name="cubrir_gastos" #gastosSi value="si"> Si</label>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+
+        <div class="pet-column">
+<div class="pet-card">
+    <div class="pet-image-wrapper">
+        <img
+            [src]="imagenAnimal"
+            [alt]="'Foto de ' + animal"
+            class="pet-image">
+    </div>
+
+    <h2 class="pet-name">
+        {{ animal.toUpperCase() }}
+    </h2>
+</div>
+
+            <div class="action-buttons">
+                <button type="button" class="btn btn-cancel">CANCELAR</button>
+                
+                
+                <button type="button" class="btn btn-adopt" 
+                    (click)="onSubmit($event, txtNombre.value, txtEdad.value, txtCorreo.value, txtTelefono.value, txtDireccion.value, (animalesSi.checked ? 'si' : 'no'), txtTipoAnimales.value, txtMotivo.value, (gastosSi.checked ? 'si' : 'no'))">
+                    ADOPTAR
+                </button>
+            </div>
+        </div>
+    </main>
+</div>
